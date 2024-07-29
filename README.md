@@ -7,6 +7,7 @@ Currently unfinished guide on how to add RGB lights to the Ikea DEKAD clock.
  - [x] Instructions on adding RGB led strip.
  - [ ] Instructions for mounting ESP8266 and making entire clock USB powered.
  - [ ] Instructions for software/firmware.
+ - [ ] Table of contents.
 
 
 ## How to add the RGB
