@@ -3,12 +3,39 @@ Currently unfinished guide on how to add RGB lights to the Ikea DEKAD clock.
 [Ikea DEKAD clock online store link](https://www.ikea.com/au/en/p/dekad-alarm-clock-black-10540480/)
 
 ## TODO:
- - [ ] Add dissasebly guide.
+ - [x] Add disassembly guide.
  - [x] Instructions on adding RGB led strip.
  - [ ] Instructions for mounting ESP8266 and making entire clock USB powered.
  - [ ] Instructions for software/firmware.
  - [ ] Table of contents.
- - [ ] links to buy stuff
+ - [ ] Links to buy stuff
+
+## Disassembly instructions
+
+Remove battery cover and batteries before starting.
+Remove three screws on the back of the clock and remove the back cover. Note: these screws are longer than all of the other screw
+![20240731_191900](https://github.com/user-attachments/assets/8177e4dd-a0a0-45df-ad6a-5d4d17cac262)
+
+Remove the four screws holding in the switch and the alarm motor, then lift out the battery holder.
+![20240731_192039](https://github.com/user-attachments/assets/9da01b05-6fb4-4d7c-baa2-d3131d69be92)
+
+Remove the plastic pin holding the the alarm bell arm, followed by the arm itself.
+![20240731_192303](https://github.com/user-attachments/assets/e617eaaa-b122-4386-88ce-fb0629741743)
+![20240731_192449](https://github.com/user-attachments/assets/be0c22bd-6779-458d-8a5a-7205aae093d6)
+
+Remove the nut holding in the handle and the bells, then remove the handle and the bells.
+![20240731_192600](https://github.com/user-attachments/assets/0338527d-4792-4b25-82e9-5379a5de98f4)
+
+Remove the feet.
+![20240731_193109](https://github.com/user-attachments/assets/b453b442-999a-4cbd-b3c7-7a31722e9d16)
+
+You should have a pile of parts that looks something like this.
+![20240731_193232](https://github.com/user-attachments/assets/00226206-fd97-4cbc-a0d4-c3949c31a7cf)
+
+Now you can lift everything out of the clock like this.
+![20240731_193423](https://github.com/user-attachments/assets/3e41faa5-571e-4347-ab76-5a68e62d00a2)
+
+You are now ready to add RGB to your clock!
 
 
 ## How to add the RGB
