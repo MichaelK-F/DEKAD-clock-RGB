@@ -1,5 +1,5 @@
 # Adding RGB to the Ikea DEKAD clock
-Currently unfinished guide on how to add RGB lights to the Ikea DEKAD clock.
+Guide on how to add RGB lights to the Ikea DEKAD clock.
 
 ## Where to buy:
  - [Ikea DEKAD clock](https://www.ikea.com/us/en/p/dekad-alarm-clock-black-30540479/)
