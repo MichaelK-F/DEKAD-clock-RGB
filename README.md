@@ -1,14 +1,12 @@
 # Adding RGB to the Ikea DEKAD clock
 Currently unfinished guide on how to add RGB lights to the Ikea DEKAD clock.
-[Ikea DEKAD clock online store link](https://www.ikea.com/au/en/p/dekad-alarm-clock-black-10540480/)
 
-## TODO:
- - [x] Add disassembly guide.
- - [x] Instructions on adding RGB led strip.
- - [x] Instructions for mounting ESP8266 and making entire clock USB powered.
- - [ ] Instructions for software/firmware.
- - [ ] Table of contents.
- - [ ] Links to buy stuff
+## Where to buy:
+ - [Ikea DEKAD clock](https://www.ikea.com/us/en/p/dekad-alarm-clock-black-30540479/)
+ - [Wemos D1 mini](https://www.aliexpress.com/item/32529101036.html) The one here is a newer version with USB-C but it should work just fine
+ - [M4-5H relay](https://www.aliexpress.com/item/32246573811.html) I did NOT buy from this seller so you might be better off finding a different place to buy it
+ - [DC-DC buck convertor](https://www.aliexpress.com/item/1005006494548995.html) This is not the same one that I used but it has the same specs
+ - [WS2811 LED strip](https://www.aliexpress.com/item/1005006961233629.html) 
 
 ## Disassembly instructions
 
@@ -149,8 +147,46 @@ Make a small hole for the usb cable in the battery cover.
 ![20240812_185406](https://github.com/user-attachments/assets/7afced76-c874-436f-bdb1-b94da937ac76)
 ![20240812_185516](https://github.com/user-attachments/assets/e35efa29-c05c-4827-b922-99832a07def0)
 
+## Firmware/Software options
+WLED vs. ESPhome(HomeAssistant)
+If you want to control the relay and/or already have [Homeassistant](https://www.home-assistant.io/) set up, using the ESPhome addin is the best route to take.
+If you don't have a homeassistant server or want to have a clock that reacts to music using [LedFx](https://www.ledfx.app/), then [WLED](https://kno.wled.ge/) is the best route to take (it still has a homeassistant integration if you want it).
 
-Software guide coming soon!
+### WLED firmware install
+Follow the [WLED installation guide](https://kno.wled.ge/basics/getting-started/).
+One installed, change the led strip pin to D2 (the default is D4), and change the number of LEDs to 17 (or however many you managed to fit).
+If you want to have a sound reactive clock, then download [LedFx](https://www.ledfx.app/download-ledfx/)
+
+### Using Homeassistant and ESPhome addin
+These instructions assume you have already set up Homeassistant and ESPhome, and have a basic knowledge of how to use ESPhome.
+Create a new device in ESPhome and flash it over USB from your computer.
+Edit the yaml file and add the following config to the end of it:
+```
+light:
+  - platform: neopixelbus
+    type: GRB
+    variant: WS2811
+    pin: D2 #Change this if you used a different pin
+    num_leds: 17 #Change this if you have a different number of LEDs
+    name: "NeoPixel Light" #You can change the name of the light in Homeassistant here
+    default_transition_length: 
+      seconds: 0.2 #If you set it to a longer time period if can sometimes flicker in undesierable ways
+    effects: #To add more effects, go to: https://esphome.io/components/light/index.html#light-effects
+      - addressable_rainbow:
+          width: 17 #If you set this to the same number of leds that you have, the effect will look the best
+
+switch:
+  - platform: gpio
+    pin: D1 #If you used a different pin for the relay, change it here
+    name: "Alarm" #You can change the name of the alarm in Homeassistant here
+```
+You should now be able to install the config OTA and the LED strip and alarm should show up in Homeassistant.
+
+## Moded vs. stock clock
+![20240825_200428](https://github.com/user-attachments/assets/c2ee55ae-f198-4127-ba94-069fca353cd4)
+![20240825_200420](https://github.com/user-attachments/assets/b51358c9-3fc3-462f-91e2-f280fd148843)
+
+
 
 
 
