@@ -1,6 +1,8 @@
 # Adding RGB to the Ikea DEKAD clock
 Guide on how to add RGB lights to the Ikea DEKAD clock.
 
+![20240825_200420](https://github.com/user-attachments/assets/b51358c9-3fc3-462f-91e2-f280fd148843)
+
 ## Where to buy:
  - [Ikea DEKAD clock](https://www.ikea.com/us/en/p/dekad-alarm-clock-black-30540479/)
  - [Wemos D1 mini](https://www.aliexpress.com/item/32529101036.html) The one here is a newer version with USB-C but it should work just fine
